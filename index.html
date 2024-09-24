@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>">
+  <title>Dealing with images</title>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Dealing with images</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img sizes="100vw" srcset="assets/northern-lights-320.webp 320w,assets/northern-lights-640.webp 640w, 
+                assets/northern-lights-1280.webp 1280w, 
+                assets/northern-lights-1920.webp 1920w" src="assets/northern-lights-1920.webp"
+        alt="Northern Lights by Jonathan Bean" loading="eager">
+      <h2>Images are <span>awesome</span></h2>
+    </section>
+    <section>
+      <div class="flex">
+        <img sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" srcset="assets/sun-setting-320.webp 320w, 
+                assets/sun-setting-640.webp 640w, 
+                assets/sun-setting-1280.webp 1280w" src="assets/sun-setting-1280.webp"
+          alt="The sun is setting over a field of tall grass." loading="lazy" width="700" height="450">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex tempora blanditiis, labore molestiae ab,
+          temporibus laudantium soluta quis nam beatae provident, autem voluptatibus voluptate eaque cupiditate ipsum
+          totam itaque ullam! Molestiae veritatis unde quos facere! Omnis tempora aut deleniti ipsa dolore, provident
+          voluptas aliquam explicabo dolores, nam veniam ad optio molestias magni pariatur quibusdam rerum facere earum
+          deserunt libero sed assumenda at. Expedita adipisci officiis ducimus vitae ab. At esse sunt veniam provident
+          nemo sint aperiam eos autem beatae sit eveniet assumenda, ab sapiente officiis tempore debitis natus
+          reprehenderit corrupti inventore maiores, atque qui numquam temporibus? Explicabo fugit necessitatibus
+          reiciendis modi assumenda laboriosam, incidunt consequatur atque sint aut laborum, totam dolorem rerum
+          aspernatur quibusdam repudiandae, dicta repellendus numquam fuga unde id amet.</p>
+      </div>
+    </section>
+    <section>
+      <div class="flex">
+        <img sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" srcset="assets/beach-rocks-320.webp 320w,
+                assets/beach-rocks-640.webp 640w,  
+                assets/beach-rocks-1280.webp 1280w" src="assets/beach-rocks-1280.webp"
+          alt="A view of a beach with rocks and water." loading="lazy" width="700" height="450">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex tempora blanditiis, labore molestiae ab,
+          temporibus laudantium soluta quis nam beatae provident, autem voluptatibus voluptate eaque cupiditate ipsum
+          totam itaque ullam! Molestiae veritatis unde quos facere! Omnis tempora aut deleniti ipsa dolore, provident
+          voluptas aliquam explicabo dolores, nam veniam ad optio molestias magni pariatur quibusdam rerum facere earum
+          deserunt libero sed assumenda at. Expedita adipisci officiis ducimus vitae ab. At esse sunt veniam provident
+          nemo sint aperiam eos autem beatae sit eveniet assumenda, ab sapiente officiis tempore debitis natus
+          reprehenderit corrupti inventore maiores, atque qui numquam temporibus? Explicabo fugit necessitatibus
+          reiciendis modi assumenda laboriosam, incidunt consequatur atque sint aut laborum, totam dolorem rerum
+          aspernatur quibusdam repudiandae, dicta repellendus numquam fuga unde id amet.</p>
+      </div>
+    </section>
+    <section>
+      <div class="flex">
+        <img sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" srcset="assets/night-sky-320.webp 320w, 
+                assets/night-sky-640.webp 640w, 
+                assets/night-sky-1280.webp 1280w" src="assets/night-sky-1280.webp"
+          alt="A night sky with a star filled sky." loading="lazy" width="700" height="1050">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex tempora blanditiis, labore molestiae ab,
+          temporibus laudantium soluta quis nam beatae provident, autem voluptatibus voluptate eaque cupiditate ipsum
+          totam itaque ullam! Molestiae veritatis unde quos facere! Omnis tempora aut deleniti ipsa dolore, provident
+          voluptas aliquam explicabo dolores, nam veniam ad optio molestias magni pariatur quibusdam rerum facere earum
+          deserunt libero sed assumenda at. Expedita adipisci officiis ducimus vitae ab. At esse sunt veniam provident
+          nemo sint aperiam eos autem beatae sit eveniet assumenda, ab sapiente officiis tempore debitis natus
+          reprehenderit corrupti inventore maiores, atque qui numquam temporibus? Explicabo fugit necessitatibus
+          reiciendis modi assumenda laboriosam, incidunt consequatur atque sint aut laborum, totam dolorem rerum
+          aspernatur quibusdam repudiandae, dicta repellendus numquam fuga unde id amet.</p>
+      </div>
+    </section>
+    <section>
+      <div class=" flex reverse">
+        <img sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw" srcset="assets/deer-320.webp 320w, 
+        assets/deer-640.webp 640w, 
+        assets/deer-1280.webp 1280w" src="assets/deer-1280.webp" alt="A deer with antlers standing in a field."
+          loading="lazy" width="700" height="1050">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex tempora blanditiis, labore molestiae ab,
+          temporibus laudantium soluta quis nam beatae provident, autem voluptatibus voluptate eaque cupiditate ipsum
+          totam itaque ullam! Molestiae veritatis unde quos facere! Omnis tempora aut deleniti ipsa dolore, provident
+          voluptas aliquam explicabo dolores, nam veniam ad optio molestias magni pariatur quibusdam rerum facere earum
+          deserunt libero sed assumenda at. Expedita adipisci officiis ducimus vitae ab. At esse sunt veniam provident
+          nemo sint aperiam eos autem beatae sit eveniet assumenda, ab sapiente officiis tempore debitis natus
+          reprehenderit corrupti inventore maiores, atque qui numquam temporibus? Explicabo fugit necessitatibus
+          reiciendis modi assumenda laboriosam, incidunt consequatur atque sint aut laborum, totam dolorem rerum
+          aspernatur quibusdam repudiandae, dicta repellendus numquam fuga unde id amet.</p>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>
