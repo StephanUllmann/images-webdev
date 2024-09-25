@@ -1,11 +1,32 @@
+#! /usr/bin/env node
+
+import readline from 'node:readline/promises';
+
 import sharp from 'sharp';
 import fs from 'fs/promises';
 import path from 'path';
 import pLimit from 'p-limit';
 
+// Needs improvement to navigate through file tree
+const completer = async function (line) {
+  const paths = await fs.readdir(process.cwd());
+  const hits = paths.filter((p) => p.startsWith(line));
+  return [hits.length ? hits : paths, line];
+};
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  completer,
+});
+
+console.log('Your current working directory: ', process.cwd());
+const source = await rl.question('Relative Path to source images: ');
+const target = await rl.question('Relative Path to target directory: ');
+rl.close();
 // Change these paths relative to the directory you're running this script from
-const sourceDirectory = '../img-src';
-const targetDirectory = '../assets';
+const sourceDirectory = source || '../img-src';
+const targetDirectory = target || '../assets';
 
 // Configure your sizes and formats
 const sizes = [1920, 1280, 640, 320];

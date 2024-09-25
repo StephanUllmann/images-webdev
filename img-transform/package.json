@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "imgt": "./index.js"
+  },
   "scripts": {
     "start": "node index.js"
   },
