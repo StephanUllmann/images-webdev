@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Monaspace';
+  src: url(FontWithASyntaxHighlighter-Regular.woff2) format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open-Dyslexic';
+  src: url(OpenDyslexic-Regular.otf) format('woff2');
+  font-display: swap;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,29 +17,14 @@
 
 :root {
   color-scheme: light dark;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
-  --color-50: oklch(97.28% 0.009 161.35);
+  font-family: 'Open-Dyslexic', system-ui, sans-serif;
   --color-100: oklch(93.34% 0.023 157.58);
   --color-200: oklch(86.89% 0.043 159.33);
-  --color-300: oklch(77.85% 0.068 161.22);
-  --color-400: oklch(66.96% 0.087 161.36);
-  --color-500: oklch(57.36% 0.09 162.04);
-  --color-600: oklch(49.15% 0.08 162.38);
-  --color-700: oklch(41.59% 0.064 164.77);
   --color-800: oklch(36.03% 0.053 164.64);
   --color-900: oklch(31.95% 0.045 165.16);
-  --color-950: oklch(22.56% 0.027 170.34);
   --secondary-50: oklch(97.32% 0.007 53.45);
-  --secondary-100: oklch(93.92% 0.014 60.57);
-  --secondary-200: oklch(87.33% 0.029 57.33);
   --secondary-300: oklch(78.79% 0.049 53.5);
-  --secondary-400: oklch(69.28% 0.072 48.11);
-  --secondary-500: oklch(62.17% 0.091 42.5);
-  --secondary-600: oklch(57.04% 0.096 36.76);
-  --secondary-700: oklch(48.35% 0.083 32.43);
   --secondary-800: oklch(43.14% 0.068 27.83);
-  --secondary-900: oklch(38.22% 0.053 30);
   --secondary-950: oklch(25.1% 0.035 25.51);
 
   --border-radius: 1rem;
@@ -39,12 +35,18 @@
 html {
   box-sizing: border-box;
 }
+::selection {
+  background-color: var(--color-200);
+  color: var(--secondary-950);
+  border-radius: 1rem;
+}
 
 body {
   /* max-width: 1248px; */
   margin-inline: auto;
   background-color: light-dark(var(--color-100), var(--color-900));
   color: light-dark(var(--secondary-950), var(--secondary-50));
+  letter-spacing: 1px;
 }
 
 /* A more effective CSS Image Reset: https://gist.github.com/palashmon/35bda7887eb4bc45459d71eca3dda7a5 */
@@ -58,24 +60,42 @@ img {
   shape-margin: 1rem; /* add spacing around image */
 }
 
-p {
+section h2 {
+  margin-block: 2rem;
+  text-decoration: underline;
+}
+
+p,
+li {
   text-wrap: pretty;
   line-height: 1.75;
   max-width: 65ch;
   font-size: 1.125rem;
+  margin-block: 0.5rem;
+}
+
+section a {
+  text-decoration: underline;
+}
+
+picture {
+  height: 100%;
+  align-self: auto;
 }
 
 header {
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   width: 100%;
   padding-inline: var(--gap);
   display: flex;
+  padding-block: 2rem;
 
   &::after {
     content: '';
     position: absolute;
     inset: 0;
-    inset: -1rem;
+    inset: 0rem;
     background-image: linear-gradient(rgb(from var(--color-800) r g b / calc(alpha * 0.5)) 80%, transparent);
     filter: blur(2px);
     z-index: 2;
@@ -105,9 +125,10 @@ a {
   font: inherit;
   text-decoration: none;
   transition: all 200ms ease;
+  text-underline-offset: 0.25rem;
   &:hover {
     text-decoration: underline;
-    text-underline-offset: 0.25rem;
+
     color: var(--secondary-200);
   }
 }
@@ -131,6 +152,14 @@ a {
     background-color: rgb(from var(--color-800) r g b / calc(alpha / 3));
     padding: 1.5rem 3rem;
     border-radius: var(--border-radius);
+
+    span {
+      font-style: italic;
+    }
+
+    span::after {
+      content: '!';
+    }
   }
 }
 
@@ -151,13 +180,47 @@ section:not(.hero) {
   margin-inline: auto;
 }
 
+section ul {
+  margin-left: 1rem;
+}
+pre code,
+code,
+.code {
+  font-family: 'Monaspace';
+}
+
+code {
+  color: light-dark(var(--secondary-800), var(--secondary-300));
+}
+
+textarea.code {
+  min-width: 100%;
+  min-height: 18rem;
+  field-sizing: content;
+  padding: 1rem;
+  scrollbar-width: thin;
+  overflow-x: auto;
+  background-color: hsl(70, 8%, 15%);
+  border-radius: 1rem;
+  border: none;
+  outline: 3px solid hsl(70, 8%, 15%);
+  outline-offset: 3px;
+}
+
 .flex {
   display: flex;
   gap: 2rem;
   align-items: center;
 
-  * {
-    width: 50%;
+  @media (width < 1440px) {
+    padding-inline: 0.5rem;
+  }
+
+  & > img {
+    max-width: 50%;
+  }
+  & > *:has(img) {
+    min-width: 50%;
   }
   img {
     object-fit: contain;
