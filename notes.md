@@ -157,7 +157,7 @@ Another tweak to image elements is the `decoding` attribute. When a browser reac
 
 ## Final Thoughts
 
-All this confusing code to save some kb? The great thing about these modern standards is, they can be written for us. I don't mean you should use some LLM to generate your `img` elements. You should use an image service, a CDN to serve your image. These services often come with JavaScript SDKs (Software Development Kits) that let you programmatically query the image format and size needed in the current situation. They integrate with frontend frameworks and often provide easy to use image components.
+All this confusing code to save some kb? The great thing about these modern standards is, they can be written for us. I don't mean you should use some LLM to generate your `srcset` and `sizes`. You should use an image service, a CDN to serve your image. These services often come with JavaScript SDKs (Software Development Kits) that let you programmatically query the image format and size needed in the current situation. They integrate with frontend libraries like React and often provide easy to use image components.
 Modern full stack frameworks like Next.js or Astro also come with Image components that generate `srcset`s for you, making image optimization easier.
 
 ## Resources
