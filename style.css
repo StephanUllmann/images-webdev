@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Monaspace';
-  src: url(FontWithASyntaxHighlighter-Regular.woff2) format('woff2');
+  src: url(assets/fonts/FontWithASyntaxHighlighter-Regular.woff2) format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Open-Dyslexic';
-  src: url(OpenDyslexic-Regular.otf) format('woff2');
+  src: url(assets/fonts/OpenDyslexic-Regular.otf) format('woff2');
   font-display: swap;
 }
 
