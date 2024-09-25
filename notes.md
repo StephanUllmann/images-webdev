@@ -112,7 +112,7 @@ The key point here is that we let the browser decide which image fits best. We h
 
 As a fallback we provide the usual `src` attribute as well for older browsers, who know nothing about `srcset`.
 
-## My Grandma Can't See My Picture...
+### My Grandma Can't See My Picture...
 
 You wanted to show your fancy, modern portfolio to your Grandma, but her IE6 messes up everything? Maybe your Grandma can only be helped with a [hack like the one described here](https://web.dev/learn/images/prescriptive#the_type_attribute). But if you want or need more control over what the browser chooses, or want to provide better fallbacks for 'freak image formats' like WebP, you can make use of the `picture` element.
 
@@ -155,7 +155,7 @@ Using `sizes` and `srcset` on `img` elements provides a more descriptive approac
 
 Another tweak to image elements is the `decoding` attribute. When a browser reaches out to get a peculiar pic, it needs to decode the data mess it receives into awesome imagery. This can be done synchronously on the main thread, or asynchronously. Different browsers have different defaults here. And usually it barely makes any difference ([for more details, read this aweawesomely nerdy article](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/)). Since synchronous decoding is blocking, adding many new images via JavaScript, "can lead to a slightly clunky user experience. So you might want to add `decoding="async"` when you are using React and adding many images at once.
 
-### Final Advice
+## Final Thoughts
 
 All this confusing code to save some kb? The great thing about these modern standards is, they can be written for us. I don't mean you should use some LLM to generate your `img` elements. You should use an image service, a CDN to serve your image. These services often come with JavaScript SDKs (Software Development Kits) that let you programmatically query the image format and size needed in the current situation. They integrate with frontend frameworks and often provide easy to use image components.
 Modern full stack frameworks like Next.js or Astro also come with Image components that generate `srcset`s for you, making image optimization easier.
