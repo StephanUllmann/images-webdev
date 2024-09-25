@@ -162,14 +162,16 @@ Modern full stack frameworks like Next.js or Astro also come with Image componen
 
 ## Resources
 
-[Choosing image format](https://dodonut.com/blog/best-image-formats-for-the-web/)
-[The image decoding attribute](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/)
-[Syntax Highlighting Font](https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/)
+- [Google for Developers Learning Path Images](https://web.dev/learn/images)
+- [Choosing image format](https://dodonut.com/blog/best-image-formats-for-the-web/)
+- [The image decoding attribute](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/)
+- [Syntax Highlighting Font](https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/)
+- [Open Dyslexic Font](https://opendyslexic.org/)
 
-## Attributions
+## Image Attributions
 
-Olga Schraven - A deer with antlers standing in a field
-Steve Gribble - A night sky with a star filled sky
-Iain Kennedy - A view of a beach with rocks and water
-Liana S - The sun is setting over a field of tall grass
-Jonathan Bean - Northern Lights
+- Olga Schraven - A deer with antlers standing in a field
+- Steve Gribble - A night sky with a star filled sky
+- Iain Kennedy - A view of a beach with rocks and water
+- Liana S - The sun is setting over a field of tall grass
+- Jonathan Bean - Northern Lights
