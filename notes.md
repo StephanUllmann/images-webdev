@@ -32,7 +32,6 @@ Most performance optimizations concerning images are done outside our programmin
 
 ### Choose the Right Format
 
-[Choosing image format](https://dodonut.com/blog/best-image-formats-for-the-web/)
 There are many image formats to choose from, and modern browsers support quite a few of them.
 The most prominent are PNG, JPG, SVG, WebP, and AVIF.
 
@@ -47,7 +46,7 @@ Also, make sure to tailor the sizes of your images to your use case. A 4000x2250
 
 ### I've Got This JPG...
 
-You need to re-format and re-size an image? Go googling. Use programs like [XnConvert](https://www.xnview.com/en/xnconvert/), or write a little Node.js script utilizing [sharp](https://sharp.pixelplumbing.com/).
+You need to re-format and re-size an image? Go googling. Use programs like [XnConvert](https://www.xnview.com/en/xnconvert/), or write a little Node.js script utilizing [sharp](https://sharp.pixelplumbing.com/). I haven't found an optimal solution for self-tailored images so far. ¯\\\_(ツ)\_/¯
 
 ### The Best Image Optimization
 
