@@ -15,11 +15,22 @@ const formats = [
   { format: 'jpeg', quality: 75 },
 ];
 
+const dirSep = path.sep;
+
 // Needs improvement to navigate through file tree
 const completer = async function (line) {
-  const paths = await fs.readdir(process.cwd());
-  const hits = paths.filter((p) => p.startsWith(line));
-  return [hits.length ? hits : paths, line];
+  try {
+    if (line === '..') return [['..' + dirSep], line];
+    const slicedLine = line.includes(dirSep) ? line.slice(0, line.lastIndexOf(dirSep) + 1) : '';
+    const paths = await fs.readdir(path.join(process.cwd(), slicedLine), { withFileTypes: true });
+    const hits = paths
+      .filter((p) => p.name.startsWith(line.slice(line.lastIndexOf(dirSep) + 1)) && p.isDirectory())
+      .map((h) => slicedLine + h.name + dirSep);
+    return [hits.length ? hits : paths.map((p) => p.name), line];
+  } catch (error) {
+    console.error('Error in completer', error);
+    return [[], line];
+  }
 };
 
 const rl = readline.createInterface({
