@@ -50,8 +50,8 @@
             The most prominent are PNG, JPG, SVG, WebP, and AVIF.</p>
           <ul>
             <li>PNGs (Portable Network Graphics) aren't as portable as the name suggests. They usually have high-quality
-              plain graphics, support transparent layers, and offer lossless compression. However, they are still large
-              compared to other formats and not suitable for high-quality photos.</li>
+              plain graphics, support transparent layers, and offer lossless compression. Graphics and text images are
+              quite efficient. However, photographic images are huge compared to other formats.</li>
             <li>JPGs (Joint Photographic Experts Group) is the oldest format on this list, having been published in
               1992. It's also the second most widespread format on the web, after PNGs. Use them when you need to ensure
               compatibility with older browsers, as nearly everything can display JPGs. They offer high-quality images
@@ -59,19 +59,21 @@
             <li>SVGs (Scalable Vector Graphics) are written in HTML-like code and describe how shapes and lines should
               be drawn by the browser. They are ideal for icons and illustrations, as they are animatable, lightweight,
               and can be embedded directly into your HTML. However, they are not suitable for photos.</li>
-            <li>WebPs are the modern successor to JPGs, replacing them as the standard format for the web. They compress
-              very effectively, support transparency, and can be animated like GIFs. WebP should be your go-to image
-              format.</li>
-            <li>AVIFs are a very modern format, now supported in all modern browsers. They offer even better compression
-              than WebP but require longer decoding times. They also support transparency and are animatable. (In my
-              tests, I never achieved better compression rates than with WebP, but that might be due to my stupidity.)
+            <li>WebPs (Web Picture) are the modern successor to JPGs, replacing them as the standard format for the web.
+              They compress very effectively, support transparency, and can be animated like GIFs. Yet they could
+              degrade highly complex images and don't support progressive encoding (rendering chunks). WebP should be
+              your go-to image format.</li>
+            <li>AVIFs (AV1 Image File Format) are a very modern format, now supported in all modern browsers. They offer
+              even better compression than WebP but require longer decoding times. They also support transparency, wide
+              color gamut and are animatable. (In my test runs, I never achieved better compression rates than with
+              WebP, but the quality remains higher.)
             </li>
           </ul>
           <p>There are many more formats; look into them if you like. Maybe someday we'll get JPEG XL as a successor,
             maybe not. Might be worthwhile remembering.
             <br>
-            Also, make sure to tailor the sizes of your images to your use case. A 4000x2000 JPEG might look awesome,
-            but your hero section is rarely bigger than ~1900x800.
+            Also, make sure to tailor the sizes of your images to your use case. A 4000x2250 JPEG might look awesome,
+            but your hero section is rarely bigger than ~1920x1080.
           </p>
         </div>
       </div>

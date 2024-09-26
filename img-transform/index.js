@@ -7,6 +7,14 @@ import fs from 'fs/promises';
 import path from 'path';
 import pLimit from 'p-limit';
 
+const allowedExt = ['avif', 'webp', 'jpeg'];
+const defaultSizes = [1920, 1280, 640, 320];
+const formats = [
+  { format: 'avif', quality: 60, effort: 9, chromaSubsampling: '4:2:0', bitdepth: 12 },
+  { format: 'webp', quality: 75, effort: 6, smartSubsample: true },
+  { format: 'jpeg', quality: 75 },
+];
+
 // Needs improvement to navigate through file tree
 const completer = async function (line) {
   const paths = await fs.readdir(process.cwd());
@@ -23,21 +31,42 @@ const rl = readline.createInterface({
 console.log('Your current working directory: ', process.cwd());
 const source = await rl.question('Relative Path to source images: ');
 const target = await rl.question('Relative Path to target directory: ');
+let sizesInput = await rl.question(`Type in target sizes (defaults to ${defaultSizes.join(', ')}): `);
+sizesInput = sizesInput
+  .split(/ |,/)
+  .filter((i) => i)
+  .map((i) => {
+    const result = parseInt(i);
+    if (isNaN(result)) {
+      console.log('Invalid input. Numbers requred.');
+      rl.close();
+      process.exit(1);
+    }
+    return result;
+  });
+
+let formatInput = await rl.question(`Choose formats - ${allowedExt.join(', ')} (defaults to all): `);
 rl.close();
+
+formatInput = formatInput
+  .split(/ |,/)
+  .filter((f) => f)
+  .map((f) => f.toLowerCase());
+if (formatInput.some((f) => !allowedExt.includes(f))) {
+  console.log('Invalid format.');
+  process.exit(1);
+}
 // Change these paths relative to the directory you're running this script from
 const sourceDirectory = source || '../img-src';
 const targetDirectory = target || '../assets';
 
 // Configure your sizes and formats
-const sizes = [1920, 1280, 640, 320];
-const formats = [
-  { format: 'avif', quality: 75, effort: 9 },
-  { format: 'webp', quality: 75, effort: 6, smartSubsample: true },
-  { format: 'jpeg', quality: 75 },
-];
+const sizes = !sizesInput[0] ? defaultSizes : sizesInput;
 
+const appliedFormats = formatInput.length === 0 ? formats : formats.filter((f) => formatInput.includes(f.format));
 // This is creating a configurations array - waaay less code than writing all by hand
-const configurations = sizes.flatMap((size) => formats.map((format) => ({ ...format, size })));
+const configurations = sizes.flatMap((size) => appliedFormats.map((format) => ({ ...format, size })));
+console.log('running with: ', JSON.stringify(configurations));
 
 // Limiting concurrent processes - my laptop is hitting hte fan!
 const limit = pLimit(5);

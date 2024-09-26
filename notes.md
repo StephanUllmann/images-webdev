@@ -36,14 +36,14 @@ Most performance optimizations concerning images are done outside our programmin
 There are many image formats to choose from, and modern browsers support quite a few of them.
 The most prominent are PNG, JPG, SVG, WebP, and AVIF.
 
-- PNGs (Portable Network Graphics) aren't as portable as the name suggests. They usually have high-quality plain graphics, support transparent layers, and offer lossless compression. However, they are still large compared to other formats and not suitable for high-quality photos.
+- PNGs (Portable Network Graphics) aren't as portable as the name suggests. They usually have high-quality plain graphics, support transparent layers, and offer lossless compression. Graphics and text images are quite efficient. However, photographic images are huge compared to other formats.
 - JPGs (Joint Photographic Experts Group) is the oldest format on this list, having been published in 1992. It's also the second most widespread format on the web, after PNGs. Use them when you need to ensure compatibility with older browsers, as nearly everything can display JPGs. They offer high-quality images but lack transparency and tend to have relatively large file sizes.
 - SVGs (Scalable Vector Graphics) are written in HTML-like code and describe how shapes and lines should be drawn by the browser. They are ideal for icons and illustrations, as they are animatable, lightweight, and can be embedded directly into your HTML. However, they are not suitable for photos.
-- WebPs are the modern successor to JPGs, replacing them as the standard format for the web. They compress very effectively, support transparency, and can be animated like GIFs. WebP should be your go-to image format.
-- AVIFs are a very modern format, now supported in all modern browsers. They offer even better compression than WebP but require longer decoding times. They also support transparency and are animatable. (In my tests, I never achieved better compression rates than with WebP, but that might be due to my stupidity.)
+- WebPs (Web Picture) are the modern successor to JPGs, replacing them as the standard format for the web. They compress very effectively, support transparency, and can be animated like GIFs. Yet they could degrade highly complex images and don't support progressive encoding (rendering chunks). WebP should be your go-to image format.
+- AVIFs (AV1 Image File Format) are a very modern format, now supported in all modern browsers. They offer even better compression than WebP but require longer decoding times. They also support transparency, wide color gamut and are animatable. (In my test runs, I never achieved better compression rates than with WebP, but the quality remains higher.)
 - There are many more formats; look into them if you like. Maybe someday we'll get JPEG XL as a successor, maybe not. Might be worthwhile remembering.
 
-Also, make sure to tailor the sizes of your images to your use case. A 4000x2000 JPEG might look awesome, but your hero section is rarely bigger than ~1900x800.
+Also, make sure to tailor the sizes of your images to your use case. A 4000x2250 JPEG might look awesome, but your hero section is rarely bigger than ~1920x1080.
 
 ### I've Got This JPG...
 
@@ -163,15 +163,20 @@ Modern full stack frameworks like Next.js or Astro also come with Image componen
 ## Resources
 
 - [Google for Developers Learning Path Images](https://web.dev/learn/images)
+- [MDN: Learn Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Choosing image format](https://dodonut.com/blog/best-image-formats-for-the-web/)
+- [AVIF and WebP comparison](https://cloudinary.com/guides/image-formats/avif-vs-webp-4-key-differences-and-how-to-choose)
 - [The image decoding attribute](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/)
+
+### Fonts used in the demo
+
 - [Syntax Highlighting Font](https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/)
 - [Open Dyslexic Font](https://opendyslexic.org/)
 
-## Image Attributions
+### Image Attributions
 
-- Olga Schraven - A deer with antlers standing in a field
-- Steve Gribble - A night sky with a star filled sky
-- Iain Kennedy - A view of a beach with rocks and water
-- Liana S - The sun is setting over a field of tall grass
 - Jonathan Bean - Northern Lights
+- Liana S - The sun is setting over a field of tall grass
+- Steve Gribble - A night sky with a star filled sky
+- Olga Schraven - A deer with antlers standing in a field
+- Iain Kennedy - A view of a beach with rocks and water
