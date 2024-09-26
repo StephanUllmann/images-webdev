@@ -152,7 +152,7 @@ Using `sizes` and `srcset` on `img` elements provides a more descriptive approac
 
 ### What's `decoding` doing?
 
-Another tweak to image elements is the `decoding` attribute. When a browser reaches out to get a peculiar pic, it needs to decode the data mess it receives into awesome imagery. This can be done synchronously on the main thread, or asynchronously. Different browsers have different defaults here. And usually it barely makes any difference ([for more details, read this awesomely nerdy article](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/)). Since synchronous decoding is blocking, adding many new images via JavaScript, "can lead to a slightly clunky user experience. So you might want to add `decoding="async"` when you are using React and adding many images at once.
+Another tweak to image elements is the `decoding` attribute. When a browser reaches out to get a peculiar pic, it needs to decode the data mess it receives into awesome imagery. This can be done synchronously on the main thread, or asynchronously. Different browsers have different defaults here. And usually it barely makes any difference ([for more details, read this awesomely nerdy article](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/)). Since synchronous decoding is blocking, adding many new images via JavaScript, can lead to a slightly clunky user experience. So you might want to add `decoding="async"` when you are using React and adding many images at once.
 
 ## Final Thoughts
 

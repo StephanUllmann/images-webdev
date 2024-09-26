@@ -20,14 +20,20 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <img src="img-src/northern-lights-original.jpg" alt="Northern Lights by Jonathan Bean">
+      <img sizes="100vw" src="assets/northern-lights-1920.webp" alt="Northern Lights by Jonathan Bean" loading="eager">
       <h2>Images are <span>awesome</span></h2>
     </section>
 
     <!-- Parts -->
     <section>
       <div class="flex">
-        <img src="img-src/sun-setting-original.jpg" alt="The sun is setting over a field of tall grass.">
+        <img sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw , 33vw" srcset="
+        assets/sun-setting-320.webp 320w,
+        assets/northern-lights-640.webp 640w, 
+        assets/northern-lights-1280.webp 1280w, 
+        assets/northern-lights-1920.webp 1920w
+        " src="assets/sun-setting-1920.webp" alt="The sun is setting over a field of tall grass." loading="lazy"
+          width="700" height="450" decoding="async">
         <div>
           <h2>TL;DR</h2>
           <ul>
@@ -43,7 +49,7 @@
     <!--  -->
     <section>
       <div class="flex">
-        <img src="img-src/night-sky-original.jpg" alt="A night sky with a star filled sky.">
+        <img src="assets/night-sky-1920.webp" alt="A night sky with a star filled sky." loading="lazy">
         <div>
           <h2>Choose the Right Format</h2>
           <p>There are many image formats to choose from, and modern browsers support quite a few of them.
@@ -81,7 +87,7 @@
     <!--  -->
     <section>
       <div class=" flex">
-        <img src="img-src/deer-original.jpg" alt="A deer with antlers standing in a field.">
+        <img src="assets/deer-1920.webp" alt="A deer with antlers standing in a field." loading="lazy">
         <div>
           <h2>I've Got This JPG...</h2>
           <p>You need to re-format and re-size an image? Go googling. Use programs like <a
@@ -102,7 +108,7 @@
     <!--  -->
     <section>
       <div class=" flex">
-        <img src="img-src/beachy-rock-original.jpg" alt="A beachy rock at the sea.">
+        <img src="assets/beachy-rock-1920.webp" alt="A beachy rock at the sea." loading="lazy">
         <div>
           <h2>Let the Browser Choose</h2>
           <!-- CODE EXAMPLE STARTING HERE -->
@@ -147,7 +153,7 @@
     <!--  -->
     <section>
       <div class=" flex">
-        <img src="img-src/beachy-rock-original.jpg" alt="A beachy rock at the sea.">
+        <img src="assets/beachy-rock-1920.webp" alt="A beachy rock at the sea." loading="lazy">
         <div>
           <h2>My Grandma Can't See My Picture...</h2>
           <p>You wanted to show your fancy, modern portfolio to your Grandma, but her IE6 messes up everything? Maybe
